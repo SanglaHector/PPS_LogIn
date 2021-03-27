@@ -1,0 +1,24 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Tab dos
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-card *ngIf="mostrar">
+
+    <ion-card-header>Tus Datos</ion-card-header>
+
+    <ion-card-content>
+
+      <h3>Nombre:</h3>
+      <p>{{nombre}}</p>
+
+      <h3>Apellido:</h3>
+      <p>{{apellido}}</p>
+
+    </ion-card-content>
+  </ion-card>
+</ion-content>

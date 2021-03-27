@@ -1,0 +1,37 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      LogIn
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content padding>
+  <ion-card-header>Ingreses sus datos</ion-card-header>
+  <ion-item>
+    <ion-label>Mail:</ion-label>
+    <ion-input type="text"id="mail" placeholder="Mail"  [(ngModel)]="mail" ></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>Contraseña:</ion-label>
+    <ion-input type="password" placeholder="Contraseña" [(ngModel)]="clave"></ion-input>
+  </ion-item>
+    <div style="text-align: center !important;" >
+      <ion-button color="primary" size="large" shape="round" (click)="MostrarDatos()">Log in<ion-icon name="log-in-outline"  ></ion-icon></ion-button>
+    </div>
+
+  <!-- BLOQUE DE DATOS -->
+  <ion-card *ngIf="mostrar" >
+
+    <ion-card-header color="success">Tus Datos</ion-card-header>
+
+    <ion-card-content >
+
+      <h3>Nombre: {{nombre}}</h3>
+
+      <h3>Apellido: {{apellido}}</h3>
+
+    </ion-card-content>
+  </ion-card>
+  <ion-card *ngIf="datosErroneos">
+    <app-mostrar-error [mensajeError]="mensajeError" [color]="colorFondo"></app-mostrar-error>
+  
